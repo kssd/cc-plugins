@@ -4,7 +4,7 @@ Pragmatic Spec-Driven Development workflow. The **spec is the source of truth**:
 
 ## Lifecycle
 
-```
+```text
 constitution → specify → clarify → plan → tasks → implement → sync ↻
                                                         ↘ trace / analyze
 ```
@@ -27,7 +27,7 @@ constitution → specify → clarify → plan → tasks → implement → sync �
 
 ## Layout produced in your repo
 
-```
+```text
 .specify/memory/constitution.md
 specs/001-<slug>/
   spec.md

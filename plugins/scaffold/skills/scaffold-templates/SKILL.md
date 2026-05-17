@@ -9,7 +9,7 @@ This skill is an index over `${CLAUDE_PLUGIN_ROOT}/skills/scaffold-templates/tem
 
 ## Template directory layout
 
-```
+```text
 templates/
 ├── common/
 │   ├── README.md
