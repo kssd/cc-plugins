@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "sdd": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/mcp/dist/index.js"],
+      "env": {
+        "SDD_DATA_DIR": "${CLAUDE_PLUGIN_DATA}"
+      }
+    }
+  }
+}

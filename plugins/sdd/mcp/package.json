@@ -1,0 +1,26 @@
+{
+  "name": "@sdd/mcp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "MCP server for the sdd Claude Code plugin (spec store, traceability, drift detection).",
+  "type": "module",
+  "bin": {
+    "sdd-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "ajv": "^8.17.1",
+    "ts-morph": "^24.0.0",
+    "yaml": "^2.5.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.0",
+    "typescript": "^5.6.0"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "{{PROJECT_NAME}}",
+  "image": "mcr.microsoft.com/devcontainers/go:1-1.22",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "postCreateCommand": "go mod download && go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest",
+  "customizations": {
+    "vscode": {
+      "extensions": ["golang.go", "editorconfig.editorconfig"],
+      "settings": {
+        "go.lintTool": "golangci-lint",
+        "editor.formatOnSave": true
+      }
+    }
+  }
+}

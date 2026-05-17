@@ -1,0 +1,19 @@
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# Build output (mkdocs, mdbook, hugo, etc.)
+site/
+_site/
+public/
+book/
+.docusaurus/
+.cache/
+
+# Env / secrets
+.env
+.env.local

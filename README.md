@@ -1,0 +1,31 @@
+# claude-plugins
+
+A marketplace of Claude Code plugins for pragmatic engineering workflows.
+
+## Plugins
+
+| Plugin                           | Description                                                                                                                         |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| [`sdd`](./plugins/sdd)           | Spec-Driven Development — constitution, specs, clarify, plan, tasks, implement, sync, trace.                                        |
+| [`scaffold`](./plugins/scaffold) | Initialize a new repo with best-practice defaults (gitignore, README, LICENSE, editorconfig, devcontainer, linters/formatters, CI). |
+
+## Install
+
+From inside Claude Code:
+
+```text
+/plugin marketplace add /path/to/this/repo
+/plugin install sdd@claude-plugins
+```
+
+Or from GitHub once published:
+
+```text
+/plugin marketplace add kssd/claude-plugins
+/plugin install sdd@claude-plugins
+/plugin install scaffold@claude-plugins
+```
+
+## Develop
+
+Each plugin lives under `plugins/<name>/`. The marketplace manifest is at `.claude-plugin/marketplace.json`. See [Claude Code plugin docs](https://code.claude.com/docs/en/plugins.md).

@@ -1,0 +1,20 @@
+{
+  "name": "claude-plugins",
+  "owner": {
+    "name": "Kunwar Sangram Singh",
+    "email": "kunwar.sangram@gmail.com"
+  },
+  "description": "Claude Code plugins for pragmatic engineering workflows.",
+  "plugins": [
+    {
+      "name": "sdd",
+      "source": "./plugins/sdd",
+      "description": "Spec-Driven Development workflow for Claude Code: constitution, specs, clarify, plan, tasks, implement, sync, trace."
+    },
+    {
+      "name": "scaffold",
+      "source": "./plugins/scaffold",
+      "description": "Initialize a new repo with best-practice defaults: .gitignore, .gitattributes, README, LICENSE, .editorconfig, .dockerignore, devcontainer, linters/formatters, and GitHub Actions CI for Node/TS, Python, Go, generic, or docs-only repos."
+    }
+  ]
+}

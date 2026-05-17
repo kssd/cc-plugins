@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Lint & Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Enable corepack
+        run: corepack enable
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: '{{PACKAGE_MANAGER}}'
+
+      - name: Install dependencies
+        run: |
+          if [ "{{PACKAGE_MANAGER}}" = "npm" ]; then
+            npm ci
+          else
+            {{PACKAGE_MANAGER}} install --frozen-lockfile
+          fi
+
+      - name: Lint
+        run: {{PACKAGE_MANAGER}} run lint --if-present
+
+      - name: Type-check
+        run: npx tsc --noEmit
+
+      - name: Test
+        run: {{PACKAGE_MANAGER}} test --if-present
