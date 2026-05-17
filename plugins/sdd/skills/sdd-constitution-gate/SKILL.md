@@ -29,7 +29,7 @@ description: Enforce constitution compliance before a plan is accepted. Use duri
 
 ## Output format
 
-```
+```text
 Constitution gate: <PASS|FAIL>
   P1 <name>: <PASS|FAIL|WARN> — <one-line reason>
   P2 <name>: ...

@@ -9,7 +9,7 @@ Drift = the implementation no longer matches the spec. The `sdd` MCP server's `d
 
 ## Invocation
 
-```
+```text
 mcp call sdd.drift_detector { snapshot: "latest", scope: "<feature-dir or file glob>" }
 ```
 
@@ -42,7 +42,7 @@ For each entry decide one of:
 
 The skill produces a markdown table in the user's working session:
 
-```
+```text
 | File | Symbol | Kind | REQ-IDs | Recommendation |
 |---|---|---|---|---|
 ```
@@ -53,6 +53,6 @@ The skill produces a markdown table in the user's working session:
 
 When invoked from the `PostToolUse` hook, run with `mode: "advisory"` — output is a single line per drift entry, suppressed if empty. Never block the user's edit; surface a one-line summary like:
 
-```
+```text
 sdd drift advisory: 1 removal — symbol `generateSlug` carried FEAT-001-R03 (run /sdd:sync)
 ```
