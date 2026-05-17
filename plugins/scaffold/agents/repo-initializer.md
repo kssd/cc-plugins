@@ -54,7 +54,7 @@ Return:
 - The list of files skipped (already existed).
 - A **Next steps** block with copy-pasteable commands:
 
-  ```
+  ```sh
   git init && git add -A && git commit -m "chore: initial scaffold"
   # then, depending on stack:
   npm install   # or: uv sync   # or: go mod tidy

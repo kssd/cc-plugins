@@ -31,7 +31,7 @@ Combine with `AND`/`OR` only inside the trigger or precondition, never inside th
 - ✅ `WHEN a user submits a shorten request with a valid URL THE SYSTEM SHALL return a 7-character slug within 200 ms (p95). *(satisfies FEAT-001-R01)*`
 - ✅ `IF the rate limit for the caller is exceeded THEN THE SYSTEM SHALL reject the request with HTTP 429. *(satisfies FEAT-001-R04)*`
 - ❌ `The shortener should be fast and reliable.` *(weasel words, no trigger, no REQ-ID)*
-- ❌ `WHEN a user submits a URL THE SYSTEM SHALL insert a row into the `links` table.` *(implementation detail)*
+- ❌ `WHEN a user submits a URL THE SYSTEM SHALL insert a row into the links table.` *(implementation detail)*
 
 ## Audit checklist
 

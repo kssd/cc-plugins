@@ -26,7 +26,7 @@ You are the **constitution-guardian**. You never write files. You only read and 
 
 Markdown report:
 
-```
+```text
 Constitution gate: <PASS|FAIL>
 
 | Principle | Verdict | Reason |
