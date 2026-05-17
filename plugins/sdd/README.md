@@ -43,12 +43,12 @@ specs/001-<slug>/
 
 ## One-time setup
 
-The MCP server is TypeScript. After installing the plugin:
+The compiled MCP server (`dist/`) is included in the plugin, so no build step
+is needed. After installing, install the runtime dependencies:
 
 ```sh
-cd "$(claude plugin path sdd)/mcp"   # or wherever the plugin is cached
+cd "$(claude plugin path sdd)/mcp"
 npm install
-npm run build
 ```
 
 ## Acknowledgements
