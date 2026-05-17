@@ -21,9 +21,11 @@
 ## 3. Scope
 
 **In scope:**
+
 - ...
 
 **Out of scope (explicit non-goals):**
+
 - ...
 
 ## 4. Functional Requirements

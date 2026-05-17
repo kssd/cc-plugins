@@ -9,7 +9,7 @@ description: Decompose a plan into a dependency DAG of tasks (not a flat todo li
 
 ## Required fields per task
 
-```
+```text
 - **T<NNN>[ [P]]** — <imperative title>
   - **Satisfies:** FEAT-NNN-RNN[, ...]
   - **Depends on:** T<NNN>[, ...] | —
@@ -31,7 +31,7 @@ description: Decompose a plan into a dependency DAG of tasks (not a flat todo li
 
 End `tasks.md` with a table:
 
-```
+```text
 | REQ-ID | Tasks |
 |---|---|
 | FEAT-NNN-R01 | T001, T010 |
