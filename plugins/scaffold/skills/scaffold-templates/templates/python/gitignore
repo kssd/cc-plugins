@@ -34,20 +34,40 @@ coverage.xml
 .pytype/
 .ruff_cache/
 
-# IDE / OS
+# IDE / OS — macOS
+.DS_Store
+._*
+
+# IDE / OS — Windows
+Thumbs.db
+desktop.ini
+
+# Editors
 .idea/
 .vscode/*
 !.vscode/settings.json
 !.vscode/extensions.json
-.DS_Store
+*.swp
+*.swo
+*~
 
 # Env / secrets
-.env
-.env.local
-.env.*.local
+.env*
+!.env.example
+*.pem
+*.key
+*.secret
+
+# Logs / temp
+*.log
+tmp/
 
 # Jupyter
 .ipynb_checkpoints/
 
-# uv / pdm / poetry
+# Testing (hypothesis)
+.hypothesis/
+
+# uv / pdm / poetry / pep582
 .pdm-python
+__pypackages__/

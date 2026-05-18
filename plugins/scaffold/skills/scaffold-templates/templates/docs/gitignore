@@ -1,10 +1,19 @@
-# OS / editors
+# OS — macOS
 .DS_Store
+._*
+
+# OS — Windows
 Thumbs.db
+desktop.ini
+
+# Editors
 .idea/
 .vscode/*
 !.vscode/settings.json
 !.vscode/extensions.json
+*.swp
+*.swo
+*~
 
 # Build output (mkdocs, mdbook, hugo, etc.)
 site/
@@ -15,5 +24,5 @@ book/
 .cache/
 
 # Env / secrets
-.env
-.env.local
+.env*
+!.env.example

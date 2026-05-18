@@ -1,7 +1,19 @@
-# OS
+# OS — macOS
 .DS_Store
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+
+# OS — Windows
 Thumbs.db
+ehthumbs.db
 desktop.ini
+$RECYCLE.BIN/
+
+# OS — Linux
+.directory
+.Trash-*
 
 # Editors
 .idea/
@@ -13,11 +25,11 @@ desktop.ini
 *~
 
 # Env / secrets
-.env
-.env.local
-.env.*.local
+.env*
+!.env.example
 *.pem
 *.key
+*.secret
 
 # Logs / temp
 *.log
