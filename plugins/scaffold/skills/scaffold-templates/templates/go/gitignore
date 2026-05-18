@@ -20,14 +20,35 @@ go.work.sum
 # Dependency dirs (when using vendoring)
 vendor/
 
-# Editor / OS
+# Profiling / debug
+*.prof
+*.trace
+__debug_bin*
+
+# Temp (air live-reload, etc.)
+tmp/
+*.log
+
+# Editor / OS — macOS
+.DS_Store
+._*
+
+# Editor / OS — Windows
+Thumbs.db
+desktop.ini
+
+# Editors
 .idea/
 .vscode/*
 !.vscode/settings.json
 !.vscode/extensions.json
-.DS_Store
+*.swp
+*.swo
+*~
 
 # Env / secrets
-.env
-.env.local
-.env.*.local
+.env*
+!.env.example
+*.pem
+*.key
+*.secret
