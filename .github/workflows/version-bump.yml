@@ -1,0 +1,79 @@
+name: Version bump on merge
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  version-bump:
+    name: Bump plugin versions
+    runs-on: ubuntu-latest
+    # Skip the commit this workflow produces to avoid an infinite loop
+    if: "!startsWith(github.event.head_commit.message, 'chore(version):')"
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          # Fetch enough history to diff against the previous commit
+          fetch-depth: 2
+          # Use a token that can push back to main despite branch protection
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Detect changed plugins and bump versions
+        id: bump
+        run: |
+          set -euo pipefail
+
+          bump_patch() {
+            local file="$1"
+            local current
+            current=$(jq -r '.version' "$file")
+            local major minor patch
+            IFS='.' read -r major minor patch <<< "$current"
+            patch=$(( patch + 1 ))
+            local next="${major}.${minor}.${patch}"
+            tmp=$(mktemp)
+            jq --arg v "$next" '.version = $v' "$file" > "$tmp" && mv "$tmp" "$file"
+            echo "$current -> $next"
+          }
+
+          changed=$(git diff --name-only HEAD~1 HEAD)
+          bumped=()
+
+          # sdd plugin
+          if echo "$changed" | grep -q '^plugins/sdd/'; then
+            result=$(bump_patch plugins/sdd/.claude-plugin/plugin.json)
+            echo "sdd plugin.json: $result"
+            # sdd MCP package.json tracks the same version
+            result=$(bump_patch plugins/sdd/mcp/package.json)
+            echo "sdd mcp/package.json: $result"
+            bumped+=("sdd")
+          fi
+
+          # scaffold plugin
+          if echo "$changed" | grep -q '^plugins/scaffold/'; then
+            result=$(bump_patch plugins/scaffold/.claude-plugin/plugin.json)
+            echo "scaffold plugin.json: $result"
+            bumped+=("scaffold")
+          fi
+
+          if [ ${#bumped[@]} -eq 0 ]; then
+            echo "No plugin directories changed — nothing to bump."
+            echo "bumped=" >> "$GITHUB_OUTPUT"
+          else
+            joined=$(IFS=', '; echo "${bumped[*]}")
+            echo "bumped=$joined" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit version bump
+        if: steps.bump.outputs.bumped != ''
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add plugins/sdd/.claude-plugin/plugin.json \
+                  plugins/sdd/mcp/package.json \
+                  plugins/scaffold/.claude-plugin/plugin.json
+          git commit -m "chore(version): bump ${{ steps.bump.outputs.bumped }} [skip ci]"
+          git push
