@@ -18,8 +18,13 @@ jobs:
         with:
           # Fetch enough history to diff against the previous commit
           fetch-depth: 2
-          # Use a token that can push back to main despite branch protection
-          token: ${{ secrets.GITHUB_TOKEN }}
+          # BUMP_TOKEN is a fine-grained PAT (contents: write) belonging to the
+          # repo admin. It bypasses the branch-protection ruleset's admin bypass
+          # actor so the version commit can land on main directly.
+          # Create at: Settings → Developer settings → Personal access tokens →
+          # Fine-grained tokens → repo: kssd/claude-plugins → Contents: Read & write
+          # Then add as: Settings → Secrets → Actions → BUMP_TOKEN
+          token: ${{ secrets.BUMP_TOKEN || secrets.GITHUB_TOKEN }}
 
       - name: Detect changed plugins and bump versions
         id: bump
