@@ -1,7 +1,10 @@
 {
   "name": "scaffold",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Initialize a new repo with best-practice defaults (gitignore, linters, CI, devcontainer) for Node/TypeScript, Python, Go, generic, or docs-only projects.",
-  "author": { "name": "Kunwar Sangram Singh", "email": "kunwar.sangram@gmail.com" },
+  "author": {
+    "name": "Kunwar Sangram Singh",
+    "email": "kunwar.sangram@gmail.com"
+  },
   "license": "MIT"
 }
