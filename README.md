@@ -1,4 +1,4 @@
-# claude-plugins
+# cc-plugins
 
 A marketplace of Claude Code plugins for pragmatic engineering workflows.
 
@@ -15,15 +15,15 @@ From inside Claude Code:
 
 ```text
 /plugin marketplace add /path/to/this/repo
-/plugin install sdd@claude-plugins
+/plugin install sdd@kssd-plugins
 ```
 
-Or from GitHub once published:
+Or from GitHub:
 
 ```text
-/plugin marketplace add kssd/claude-plugins
-/plugin install sdd@claude-plugins
-/plugin install scaffold@claude-plugins
+/plugin marketplace add kssd/cc-plugins
+/plugin install sdd@kssd-plugins
+/plugin install scaffold@kssd-plugins
 ```
 
 ## Develop
