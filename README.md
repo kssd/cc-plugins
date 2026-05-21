@@ -15,15 +15,15 @@ From inside Claude Code:
 
 ```text
 /plugin marketplace add /path/to/this/repo
-/plugin install sdd@kssd-plugins
+/plugin install sdd@cc-plugins
 ```
 
 Or from GitHub:
 
 ```text
 /plugin marketplace add kssd/cc-plugins
-/plugin install sdd@kssd-plugins
-/plugin install scaffold@kssd-plugins
+/plugin install sdd@cc-plugins
+/plugin install scaffold@cc-plugins
 ```
 
 ## Develop
