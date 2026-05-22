@@ -4,7 +4,7 @@ A marketplace of Claude Code plugins for pragmatic engineering workflows.
 
 ## Demo
 
-<video src="https://github.com/user-attachments/assets/348203e5-10a6-4d44-87db-28e41623e2ec" controls width="100%"></video>
+<video src="https://github.com/user-attachments/assets/348203e5-10a6-4d44-87db-28e41623e2ec" autoplay muted loop controls width="100%"></video>
 
 ## Plugins
 
