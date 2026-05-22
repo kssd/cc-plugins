@@ -2,6 +2,10 @@
 
 A marketplace of Claude Code plugins for pragmatic engineering workflows.
 
+## Demo
+
+<video src="docs/demo.mp4" controls width="100%"></video>
+
 ## Plugins
 
 | Plugin                           | Description                                                                                                                         |
