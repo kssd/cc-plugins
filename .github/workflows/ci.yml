@@ -52,3 +52,4 @@ jobs:
           '**/*.md'
           --ignore node_modules
           --ignore plugins/sdd/mcp/dist
+          --ignore usage-videos/node_modules
