@@ -22,7 +22,7 @@ jobs:
           # repo admin. It bypasses the branch-protection ruleset's admin bypass
           # actor so the version commit can land on main directly.
           # Create at: Settings → Developer settings → Personal access tokens →
-          # Fine-grained tokens → repo: kssd/claude-plugins → Contents: Read & write
+          # Fine-grained tokens → repo: kssd/cc-plugins → Contents: Read & write
           # Then add as: Settings → Secrets → Actions → BUMP_TOKEN
           token: ${{ secrets.BUMP_TOKEN || secrets.GITHUB_TOKEN }}
 

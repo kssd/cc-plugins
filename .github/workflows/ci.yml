@@ -31,6 +31,15 @@ jobs:
       - name: Test
         run: npm test
 
+  validate-manifests:
+    name: Validate plugin manifests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Check manifest names for reserved terms
+        run: bash scripts/validate-manifests.sh
+
   markdown-lint:
     name: Markdown lint
     runs-on: ubuntu-latest
@@ -43,3 +52,4 @@ jobs:
           '**/*.md'
           --ignore node_modules
           --ignore plugins/sdd/mcp/dist
+          --ignore usage-videos/node_modules
