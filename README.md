@@ -4,7 +4,7 @@ A marketplace of Claude Code plugins for pragmatic engineering workflows.
 
 ## Demo
 
-<video src="https://github.com/kssd/cc-plugins/releases/download/v0.1-demo/demo.mp4" controls width="100%"></video>
+[![Demo video](docs/demo-thumb.png)](https://github.com/kssd/cc-plugins/releases/download/v0.1-demo/demo.mp4)
 
 ## Plugins
 
